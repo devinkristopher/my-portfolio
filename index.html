@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Devin Kristopher — Portfolio</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:0;background:#f4f4f4;color:#333}
+    header{background-color:#1e68e7;color:#e6f0ff;padding:60px 30px;font-family:Arial, sans-serif;font-weight:600;letter-spacing:1px;display:flex;justify-content:space-between;align-items:center;background-image:linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px),linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);background-size:80px 80px,80px 80px,20px 20px,20px 20px;box-shadow:inset 0 0 40px rgba(0,0,0,0.35);position:relative;}
+    header::before{content:'';position:absolute;inset:30px 10px;background-color:rgba(27,27,38,0.15);border-radius:10px;backdrop-filter:blur(10px);pointer-events:none;z-index:0;}
+    header h1{margin:0;font-size:1.5rem;white-space:nowrap;position:relative;z-index:1;}
+    header nav{position:relative;z-index:1;}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;justify-content:flex-end}
+    nav a{color:#e6f0ff;text-decoration:none;font-weight:600}
+    .container{max-width:900px;margin:40px auto;padding:0 20px}
+    #hero{padding:60px 40px;border-radius:8px;text-align:center}
+    #hero h2{margin:0 0 10px;font-size:2rem;font-family: 'Roboto Mono', monospace;color:#39325A}
+    h3 {font-size: 1.25rem; margin: 32px 0 12px;
+        font-family: 'Roboto Mono', monospace;color:#39325A;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        border-left: 4px solid rgba(30,104,231,0.95);
+        padding-left: 12px;}
+    h4 {
+        font-size: 1rem;
+        margin: 24px 0 8px;
+        font-family: 'Roboto Mono', monospace;
+        color: #39325A;
+        font-weight: 600;
+        letter-spacing: 0.1px;
+    }
+    h4 img {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+    section{margin-top:40px}
+    .skills-list{columns:2 200px;list-style:none;padding:0}
+    .skills-list li{background:#fff;margin:5px 0;padding:10px;border-radius:4px;border:1px solid #e0e0e0}
+    li img {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Devin Rogers</h1>
+    <nav aria-label="main navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <section id="home" class="hero-section">
+      <div id="hero">
+        <h2>Engineering the intelligent layer between people and systems</h2>
+        <p>Atlanta Metropolitan Area</p>
+        <p>Where software engineering, IT infrastructure and AI + ML intersect to solve complex problems.</p>
+      </div>
+    </section>
+    <section id="about">
+      <h3>About Me</h3>
+      <p>Software &amp; systems engineer with a strong foundation in artificial intelligence/machine learning and endpoint security. I have designed automated remediation workflows, engineered cloud-based (AWS) RESTful Java APIs, managed large-scale device fleets, and developed ML models in applied settings. My experience spans full‑stack development, data analysis, and security automation across various industries.</p>
+    </section>
+    <section id="skills">
+      <h3>Skills</h3>
+      <ul class="skills-list">
+        <!--
+        <li><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Description of image 1">Python (pandas, NumPy, data pipelines)</li>
+      -->
+        <li>Python (pandas, Numpy, data pipelines)</li>
+        <li>Jamf Endpoint Management</li>
+        <li>Machine learning &amp; AI (scikit-learn, TensorFlow)</li>
+        <li>Data analysis &amp; visualization</li>
+        <li>Endpoint security automation (PowerShell, Bash)</li>
+        <li>MDM platforms: Microsoft Intune, Jamf</li>
+        <li>AzureAD/EntraID Ecosystem Administration</li>
+        <li>Microsoft Defender Portal Security Remediations</li>
+        <li>Java REST APIs (Spring Boot, Microservices)</li>
+        <li>Java Desktop Development</li>
+        <li>Android App Development (Java)</li>
+        <li>Full-Stack Development</li>
+        <!--
+        <li><img src="https://icon-icons.com/download-file?file=https%3A%2F%2Fimages.icon-icons.com%2F2699%2FPNG%2F512%2Fjamf_logo_icon_169602.png&id=169602&pack_or_individual=pack" alt="Jamf logo">Jamf Endpoint Management</li>
+      -->
+        <li>REST APIs, automation scripting</li>
+        <li>Swift (iOS utilities)</li>
+        <li>Cloud (AWS Lambda, S3, CloudWatch)</li>
+        <li>Dev tools: Git, SonarQube</li>
+      </ul>
+    </section>
+    <section id="experience">
+      <h3>Experience</h3>
+      <!--
+      <h4>
+            <a href="https://example.com/home"> 
+        <img src="https://media.glassdoor.com/sqll/9009902/tripleten-squareLogo-1697656801139.png" 
+             alt="A descriptive text for the image"
+             width="150" 
+             height="auto">
+    </a>
+        TripleTen - Artificial Intelligence/Machine Learning (Dec 2025 - Present)</h4>
+    -->
+        <h4>
+            TripleTen
+        </h4>
+        <h4>Artificial Intelligence/Machine Learning (Dec 2025 - Present)</h4>
+        <ul>
+        <li>Intensive applied AI/ML program focused on Python, data analysis, statistical modeling, and real-world workflows. Built models, pipelines, and automations using pandas, NumPy, scikit-learn, matplotlib; applied probability and statistics to business problems.</li>
+        </ul>
+        <h4>Core Scientific</h4>
+      <h4>Information Technology Engineer</em> (Jul 2025 - Oct 2025, Miami, FL)</h4>
+      <ul>
+        <li>Engineered endpoint security remediation pipelines using telemetry normalization &amp; correlation to identify vulnerable OpenSSL installations and scripted automated fixes.</li>
+      </ul>
+      <h4>Information Technology Engineer (Apr 2024 - Jun 2025, Austin, TX)</h4>
+      <ul>
+        <li>Managed Microsoft Intune and Jamf platforms across ~500 devices; built zero-touch provisioning workflows in PowerShell.</li>
+        <li>Developed EDR workflows with Defender, Intune and Jamf, creating remediation scripts to enforce compliance.</li>
+        <li>Architected Jamf lifecycles for iPhones; owned Apple Business Manager and Exchange Online automation.</li>
+      </ul>
+      <h4>Data Center Technician II</em> (Dec 2023 - Apr 2024, Marble, NC)</h4>
+      <ul>
+        <li>Created Python tools and an iOS barcode scanner app to streamline asset management and outage analysis.</li>
+      </ul>
+      <h4>Data Center Technician</em> (Apr 2023 - Dec 2023, Marble, NC)</h4>
+      <ul>
+        <li>Supported high‑availability infrastructure, ensuring operational efficiency.</li>
+      </ul>
+      <h4>Tech Mahindra</h4>
+         <h4>Associate Software Engineer (Jun 2022 - Jan 2023, Dallas, TX)</h4>
+      <ul>
+        <li>Built Java Spring Boot REST API with MongoDB &amp; AWS S3; added health indicators and security fixes.</li>
+        <li>Automated log parsing with Python Lambdas and improved code quality using Sonar tools.</li>
+      </ul>
+      <h4>The Guitar Center Company</h4>
+      <h4>Merchandising Technology Specialist (Jul 2021 - Mar 2022, Westlake Village, CA)</h4>
+      <ul>
+        <li>Managed 1,600 Macs across 300 stores; developed automation in AppleScript, Bash, Objective‑C for displays and installers.</li>
+      </ul>
+    </section>
+    <!--
+    <section id="education">
+      <h3>Education</h3>
+      <h4>
+                    <a href="https://example.com/home"> 
+        <img src="https://www.ggc.edu/sites/default/files/styles/wysiwyg_default/public/2026-01/Grizzlyhead_Full%20Color%20RGB.jpg?itok=d5POudMS" 
+             alt="A descriptive text for the image"
+             width="150" 
+             height="auto">
+    </a>
+        Bachelor of Science in Information Technology (Software Development), Georgia Gwinnett College, 2016 – 2021</h4>
+      <p>AI/ML Bootcamp, TripleTen (Dec 2025)</p>
+    </section>
+-->
+        
+    <section id="education">
+      <h3>Education</h3>
+      <h4>Bachelor of Science in Information Technology (Software Development), Georgia Gwinnett College, 2016 – 2021</h4>
+      <h4>AI/ML Bootcamp, TripleTen (Dec 2025)</h4>
+    </section>
+
+    <section id="contact">
+      <h3>Contact</h3>
+      <p>Mobile: (678) 477‑5360</p>
+      <p>Email: <a href="mailto:devinkristopher@icloud.com">devinkristopher@icloud.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/devinkristopher" target="_blank">linkedin.com/in/devinkristopher</a></p>
+    </section>
+  </main>
+</body>
+</html>
