@@ -44,14 +44,45 @@
         vertical-align: middle;
         margin-right: 8px;
     }
+
+    html{scroll-behavior:smooth;scroll-padding-top:24px}
+    a:focus-visible{outline:3px solid #e09200;outline-offset:4px}
+    .skip-link{position:absolute;left:16px;top:-80px;padding:12px;background:white;color:#174da8;z-index:3}
+    .skip-link:focus{top:12px}
+    .container{max-width:1100px}
+    header{gap:24px;flex-wrap:wrap}
+    header nav ul{flex-wrap:wrap;gap:14px 20px}
+    .section-intro{max-width:800px;line-height:1.65}
+    .project-nav{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
+    .project-nav a{color:#174da8;background:white;border:1px solid #bdcce4;border-radius:24px;padding:10px 15px;font-size:.9rem}
+    .project-nav span{margin-left:7px;color:#535e71}
+    .project-group{margin-top:36px}
+    .project-group>h4{font-size:1.15rem;margin-bottom:18px}
+    .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .project-card{background:#fff;border:1px solid #dbe2eb;border-radius:10px;padding:24px;display:flex;flex-direction:column;line-height:1.6;min-width:0}
+    .project-card.featured{border-top:4px solid #1e68e7;padding-top:21px}
+    .project-card h5{font-size:1.15rem;line-height:1.4;margin:8px 0 10px}
+    .project-card a{color:#174da8;text-underline-offset:3px}
+    .project-card h5 a{text-decoration:none}
+    .project-card h5 a:hover{text-decoration:underline}
+    .project-card p{margin:0 0 14px}
+    .project-card .project-type{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.055em;color:#5a6475;margin:0}
+    .project-card .project-tools{font-size:.85rem;color:#535e71;margin-top:auto;padding-top:8px}
+    .project-links{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:.88rem;font-weight:600}
+    .project-footnote{font-size:.9rem;line-height:1.6;margin-top:24px;color:#535e71}
+    .project-footnote a{color:#174da8}
+    @media(max-width:700px){header{padding:30px 20px}header h1{white-space:normal}header nav ul{justify-content:flex-start}#hero{padding:30px 0}#hero h2{font-size:1.65rem}.container{margin-top:24px}.project-grid{grid-template-columns:1fr}.project-card{padding:20px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#projects">Skip to projects</a>
   <header>
     <h1>Devin Rogers</h1>
     <nav aria-label="main navigation">
       <ul>
         <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -64,9 +95,229 @@
     <section id="home" class="hero-section">
       <div id="hero">
         <h2>Engineering the intelligent layer between people and systems</h2>
-        <p>Atlanta Metropolitan Area</p>
+        <p>Blairsville, Georgia · Open to Atlanta-area and remote opportunities</p>
         <p>Where software engineering, IT infrastructure and AI + ML intersect to solve complex problems.</p>
       </div>
+    </section>
+    <section id="projects" aria-labelledby="projects-title">
+      <h3 id="projects-title">Project Portfolio</h3>
+      <p class="section-intro">Explore software, analysis, and machine-learning work from college, completed AI/ML training, and independent development. Each project links to its source, notebook, or recovered artifacts.</p>
+      <nav class="project-nav" aria-label="Project categories">
+        <a href="#ai-ml">AI, Machine Learning &amp; Computer Vision <span>7</span></a>
+        <a href="#data-analysis">Data Analysis &amp; Statistics <span>5</span></a>
+        <a href="#software-mobile">Software, APIs &amp; iOS <span>5</span></a>
+        <a href="#cloud-mlops">Cloud, Deployment &amp; MLOps <span>5</span></a>
+      </nav>
+      <section id="ai-ml" class="project-group" aria-labelledby="ai-ml-title">
+        <h4 id="ai-ml-title">AI, Machine Learning &amp; Computer Vision</h4>
+        <div class="project-grid">
+          <article class="project-card featured">
+            <p class="project-type">TripleTen capstone + continued development</p>
+            <h5><a href="https://github.com/devinkristopher/PAMLA">PAMLA · Predictive Agriculture Assistant</a></h5>
+            <p>A locally hosted soil-moisture forecasting assistant connecting environmental telemetry, machine learning, a stateful prediction API, and a local LLM interface.</p>
+            <p class="project-tools">Python · XGBoost · FastAPI · Docker</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/PAMLA" aria-label="View PAMLA · Predictive Agriculture Assistant repository">View repository <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/devinkristopher/PAMLA/blob/main/notebooks/exploration.ipynb" aria-label="Read PAMLA · Predictive Agriculture Assistant notebook">Read notebook</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/megaline-plan-classification">Megaline Plan Classification</a></h5>
+            <p>Classifies subscriber plans from usage patterns, compares models, and evaluates a held-out test set. Separate from the Megaline statistical-analysis project.</p>
+            <p class="project-tools">pandas · scikit-learn · Model evaluation</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/megaline-plan-classification" aria-label="View Megaline Plan Classification repository">View repository <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/devinkristopher/megaline-plan-classification/blob/main/notebook.ipynb" aria-label="Read Megaline Plan Classification notebook">Read notebook</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/betabank-churn-classification">BetaBank Customer Churn</a></h5>
+            <p>Explores class imbalance, feature engineering, and classification models using F1 and ROC AUC.</p>
+            <p class="project-tools">scikit-learn · Feature engineering</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/betabank-churn-classification" aria-label="View BetaBank Customer Churn repository">View repository <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/devinkristopher/betabank-churn-classification/blob/main/notebook.ipynb" aria-label="Read BetaBank Customer Churn notebook">Read notebook</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/insurance-charges-neural-network">Insurance Charges Regression</a></h5>
+            <p>Uses a neural network to predict recorded insurance charges, with preprocessing and regression evaluation. The target is charges, not personal health risk.</p>
+            <p class="project-tools">TensorFlow/Keras · Regression</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/insurance-charges-neural-network" aria-label="View Insurance Charges Regression repository">View repository <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/devinkristopher/insurance-charges-neural-network/blob/main/notebook.ipynb" aria-label="Read Insurance Charges Regression notebook">Read notebook</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/computer-vision-age-estimation">Computer Vision: Age Estimation</a></h5>
+            <p>Explores image-label distributions and transfer learning with a ResNet50 regression model, including limitations of age estimation.</p>
+            <p class="project-tools">TensorFlow/Keras · ResNet50</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/computer-vision-age-estimation" aria-label="View Computer Vision: Age Estimation repository">View repository <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/devinkristopher/computer-vision-age-estimation/blob/main/notebook.ipynb" aria-label="Read Computer Vision: Age Estimation notebook">Read notebook</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/film-review-sentiment-analysis">Film Review Sentiment Analysis</a></h5>
+            <p>Normalizes movie-review text and compares sentiment classifiers with saved evaluation results.</p>
+            <p class="project-tools">NLP · Text preprocessing · Classification</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/film-review-sentiment-analysis" aria-label="View Film Review Sentiment Analysis repository">View repository <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/devinkristopher/film-review-sentiment-analysis/blob/main/notebook.ipynb" aria-label="Read Film Review Sentiment Analysis notebook">Read notebook</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/coloops-retrieval-qa">Coloops · Retrieval QA</a></h5>
+            <p>Retrieves data-center operational guidance from an illustrative knowledge base and extracts answers from relevant context. A retrieval and extractive-QA prototype.</p>
+            <p class="project-tools">Chroma · Sentence Transformers · Extractive QA</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/coloops-retrieval-qa" aria-label="View Coloops · Retrieval QA repository">View repository <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/devinkristopher/coloops-retrieval-qa/blob/main/notebook.ipynb" aria-label="Read Coloops · Retrieval QA notebook">Read notebook</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="data-analysis" class="project-group" aria-labelledby="data-analysis-title">
+        <h4 id="data-analysis-title">Data Analysis &amp; Statistics</h4>
+        <div class="project-grid">
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/instacart-sda">Instacart Shopping Patterns</a></h5>
+            <p>Exploratory analysis of customer ordering behavior using relational shopping datasets.</p>
+            <p class="project-tools">pandas · EDA · Visualization</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/instacart-sda" aria-label="View Instacart Shopping Patterns repository">View repository <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/devinkristopher/instacart-sda/blob/main/notebook-3.ipynb" aria-label="Read Instacart Shopping Patterns notebook">Read notebook</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/megaline-sda">Megaline Statistical Analysis</a></h5>
+            <p>Compares mobile-plan usage and revenue to inform pricing decisions.</p>
+            <p class="project-tools">pandas · Statistics · Hypothesis testing</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/megaline-sda" aria-label="View Megaline Statistical Analysis repository">View repository <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/devinkristopher/megaline-sda/blob/main/notebook-2.ipynb" aria-label="Read Megaline Statistical Analysis notebook">Read notebook</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/video-game-sda">Video Game Sales Analysis</a></h5>
+            <p>Examines sales across platforms, genres, and regions to support market planning.</p>
+            <p class="project-tools">EDA · Statistical analysis</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/video-game-sda" aria-label="View Video Game Sales Analysis repository">View repository <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/devinkristopher/video-game-sda/blob/main/notebook.ipynb" aria-label="Read Video Game Sales Analysis notebook">Read notebook</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/movies_and_shows_imdb_jpynb">Movies &amp; Shows: IMDb Analysis</a></h5>
+            <p>Cleans and explores entertainment-industry records using Python and pandas.</p>
+            <p class="project-tools">Python · pandas · Data cleaning</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/movies_and_shows_imdb_jpynb" aria-label="View Movies &amp; Shows: IMDb Analysis repository">View repository <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/devinkristopher/movies_and_shows_imdb_jpynb/blob/main/notebook.ipynb" aria-label="Read Movies &amp; Shows: IMDb Analysis notebook">Read notebook</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">College project</p>
+            <h5><a href="https://github.com/devinkristopher/youtube-sda">YouTube Trending Data</a></h5>
+            <p>Explores 2017–2018 YouTube data to investigate trends in entertainment content.</p>
+            <p class="project-tools">Python · Jupyter · Data analysis</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/youtube-sda" aria-label="View YouTube Trending Data repository">View repository <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/devinkristopher/youtube-sda/blob/main/YouTubeData.ipynb" aria-label="Read YouTube Trending Data notebook">Read notebook</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="software-mobile" class="project-group" aria-labelledby="software-mobile-title">
+        <h4 id="software-mobile-title">Software, APIs &amp; iOS</h4>
+        <div class="project-grid">
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/house-price-fastapi">House Price Prediction API</a></h5>
+            <p>Serves a recovered regression model through validated prediction, model-information, and health endpoints.</p>
+            <p class="project-tools">FastAPI · Pydantic · Model serving</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/house-price-fastapi" aria-label="View House Price Prediction API repository">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">College collaboration · fork</p>
+            <h5><a href="https://github.com/devinkristopher/Vivace">Vivace · iOS Application</a></h5>
+            <p>Swift iOS application project preserved with its original collaboration history.</p>
+            <p class="project-tools">Swift · Xcode · iOS</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/Vivace" aria-label="View Vivace · iOS Application repository">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">College project</p>
+            <h5><a href="https://github.com/devinkristopher/Sequin">Sequin / JavaTron · MIDI Keyboard</a></h5>
+            <p>Java MIDI keyboard and sequencer prototype presented at Georgia Gwinnett College’s CREATE Symposium.</p>
+            <p class="project-tools">Java · MIDI · Event handling</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/Sequin" aria-label="View Sequin / JavaTron · MIDI Keyboard repository">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">Independent project</p>
+            <h5><a href="https://github.com/devinkristopher/Qualia">Qualia · Java UI Components</a></h5>
+            <p>AWT/Swing interface components exploring human-computer and human-machine interaction, including resizable gauges.</p>
+            <p class="project-tools">Java · Swing · HCI/HMI</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/Qualia" aria-label="View Qualia · Java UI Components repository">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">College collaboration · fork</p>
+            <h5><a href="https://github.com/devinkristopher/Cobra-Spring2020">Mad Mansion FX</a></h5>
+            <p>Java game project with rooms, navigation, encounters, inventory, and puzzles.</p>
+            <p class="project-tools">Java · Game logic · Collaboration</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/Cobra-Spring2020" aria-label="View Mad Mansion FX repository">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="cloud-mlops" class="project-group" aria-labelledby="cloud-mlops-title">
+        <h4 id="cloud-mlops-title">Cloud, Deployment &amp; MLOps</h4>
+        <div class="project-grid">
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/ml-attrition-model">Employee Attrition MLOps Pipeline</a></h5>
+            <p>A model workflow with preprocessing, tests, CI, experiment tracking, and drift monitoring.</p>
+            <p class="project-tools">GitHub Actions · MLflow · DVC · Monitoring</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/ml-attrition-model" aria-label="View Employee Attrition MLOps Pipeline repository">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/ml-pipeline-demo">ML Pipeline &amp; CI Demo</a></h5>
+            <p>Student-dropout classification workflow with data validation, preprocessing tests, and GitHub Actions.</p>
+            <p class="project-tools">Python · scikit-learn · CI</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/ml-pipeline-demo" aria-label="View ML Pipeline &amp; CI Demo repository">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">TripleTen coursework</p>
+            <h5><a href="https://github.com/devinkristopher/churn-prediction">Churn Model Versioning Exercise</a></h5>
+            <p>A separate MLOps exercise with training source and DVC-tracked data/model references; distinct from BetaBank.</p>
+            <p class="project-tools">Python · DVC · Model versioning</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/churn-prediction" aria-label="View Churn Model Versioning Exercise repository">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">Guided deployment exercise</p>
+            <h5><a href="https://github.com/devinkristopher/titanic-api-containerization">Titanic API Containerization</a></h5>
+            <p>Container build, testing, and Docker Hub publication using course-provided application code. Serving files and model artifacts are recovered from the published image.</p>
+            <p class="project-tools">Docker · FastAPI · Deployment</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/titanic-api-containerization" aria-label="View Titanic API Containerization repository">View repository <span aria-hidden="true">↗</span></a>
+              <a href="https://hub.docker.com/r/devinkreezy/titanic-survival-api">Docker Hub image</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="project-type">Completed hands-on coursework</p>
+            <h5><a href="https://github.com/devinkristopher/aws-s3-ec2-ml-lab">AWS Machine-Learning Lab</a></h5>
+            <p>S3 data storage, EC2 compute, IAM permissions, and AWS CLI in a Python/scikit-learn cloud ML workflow. Includes recovered lab artifacts and a scope summary.</p>
+            <p class="project-tools">AWS S3 · EC2 · IAM · AWS CLI</p>
+            <div class="project-links"><a href="https://github.com/devinkristopher/aws-s3-ec2-ml-lab" aria-label="View AWS Machine-Learning Lab repository">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <p class="project-footnote">Looking for more? <a href="https://github.com/devinkristopher?tab=repositories">Browse all public repositories</a>. Coursework is identified separately from professional experience; the AWS lab is not an AWS certification.</p>
     </section>
     <section id="about">
       <h3>About Me</h3>
@@ -96,6 +347,7 @@
         <li>REST APIs, automation scripting</li>
         <li>Swift (iOS utilities)</li>
         <li>Cloud (AWS Lambda, S3, CloudWatch)</li>
+        <li>AWS coursework: EC2, IAM permissions, AWS CLI, S3-based ML workflow</li>
         <li>Dev tools: Git, SonarQube</li>
       </ul>
     </section>
@@ -109,17 +361,17 @@
              width="150" 
              height="auto">
     </a>
-        TripleTen - Artificial Intelligence/Machine Learning (Dec 2025 - Present)</h4>
+        TripleTen - AI/ML Engineering Practicum (Dec 2025 - Oct 2026)</h4>
     -->
         <h4>
             TripleTen
         </h4>
-        <h4>Artificial Intelligence/Machine Learning (Dec 2025 - Present)</h4>
+        <h4>AI/ML Engineering Practicum (Dec 2025 - Oct 2026)</h4>
         <ul>
         <li>Intensive applied AI/ML program focused on Python, data analysis, statistical modeling, and real-world workflows. Built models, pipelines, and automations using pandas, NumPy, scikit-learn, matplotlib; applied probability and statistics to business problems.</li>
         </ul>
         <h4>Core Scientific</h4>
-      <h4>Information Technology Engineer</em> (Jul 2025 - Oct 2025, Miami, FL)</h4>
+      <h4>Information Technology Engineer (Jul 2025 - Oct 2025, Miami, FL)</h4>
       <ul>
         <li>Engineered endpoint security remediation pipelines using telemetry normalization &amp; correlation to identify vulnerable OpenSSL installations and scripted automated fixes.</li>
       </ul>
@@ -129,11 +381,11 @@
         <li>Developed EDR workflows with Defender, Intune and Jamf, creating remediation scripts to enforce compliance.</li>
         <li>Architected Jamf lifecycles for iPhones; owned Apple Business Manager and Exchange Online automation.</li>
       </ul>
-      <h4>Data Center Technician II</em> (Dec 2023 - Apr 2024, Marble, NC)</h4>
+      <h4>Data Center Technician II (Dec 2023 - Apr 2024, Marble, NC)</h4>
       <ul>
         <li>Created Python tools and an iOS barcode scanner app to streamline asset management and outage analysis.</li>
       </ul>
-      <h4>Data Center Technician</em> (Apr 2023 - Dec 2023, Marble, NC)</h4>
+      <h4>Data Center Technician (Apr 2023 - Dec 2023, Marble, NC)</h4>
       <ul>
         <li>Supported high‑availability infrastructure, ensuring operational efficiency.</li>
       </ul>
@@ -160,21 +412,21 @@
              height="auto">
     </a>
         Bachelor of Science in Information Technology (Software Development), Georgia Gwinnett College, 2016 – 2021</h4>
-      <p>AI/ML Bootcamp, TripleTen (Dec 2025)</p>
+      <p>AI/ML Engineering Practicum, TripleTen — Completed October 2026</p>
     </section>
 -->
         
     <section id="education">
       <h3>Education</h3>
       <h4>Bachelor of Science in Information Technology (Software Development), Georgia Gwinnett College, 2016 – 2021</h4>
-      <h4>AI/ML Bootcamp, TripleTen (Dec 2025)</h4>
+      <h4>AI/ML Engineering Practicum, TripleTen — Completed October 2026</h4>
     </section>
 
     <section id="contact">
       <h3>Contact</h3>
       <p>Mobile: (678) 477‑5360</p>
       <p>Email: <a href="mailto:devinkristopher@icloud.com">devinkristopher@icloud.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/devinkristopher" target="_blank">linkedin.com/in/devinkristopher</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/devinkristopher" target="_blank" rel="noopener noreferrer">linkedin.com/in/devinkristopher</a></p>
     </section>
   </main>
 </body>
