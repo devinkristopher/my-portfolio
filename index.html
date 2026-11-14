@@ -29,12 +29,24 @@
         font-weight: 600;
         letter-spacing: 0.1px;
     }
-    h4 img {
+    .organization-heading {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+    .organization-icon {
         width: 24px;
         height: 24px;
-        vertical-align: middle;
-        margin-right: 8px;
+        flex-shrink: 0;
+        object-fit: contain;
+        border-radius: 4px;
     }
+    .education-credential {margin: 8px 0; line-height: 1.6;}
+    .education-dates {color: #535e71; font-size: .9rem; margin: 6px 0 12px;}
+    #education ul {line-height: 1.6;}
     section{margin-top:40px}
     .skills-list{columns:2 200px;list-style:none;padding:0}
     .skills-list li{background:#fff;margin:5px 0;padding:10px;border-radius:4px;border:1px solid #e0e0e0}
@@ -353,24 +365,7 @@
     </section>
     <section id="experience">
       <h3>Experience</h3>
-      <!--
-      <h4>
-            <a href="https://example.com/home"> 
-        <img src="https://media.glassdoor.com/sqll/9009902/tripleten-squareLogo-1697656801139.png" 
-             alt="A descriptive text for the image"
-             width="150" 
-             height="auto">
-    </a>
-        TripleTen - AI/ML Engineering Practicum (Dec 2025 - Oct 2026)</h4>
-    -->
-        <h4>
-            TripleTen
-        </h4>
-        <h4>AI/ML Engineering Practicum (Dec 2025 - Oct 2026)</h4>
-        <ul>
-        <li>Intensive applied AI/ML program focused on Python, data analysis, statistical modeling, and real-world workflows. Built models, pipelines, and automations using pandas, NumPy, scikit-learn, matplotlib; applied probability and statistics to business problems.</li>
-        </ul>
-        <h4>Core Scientific</h4>
+      <h4 class="organization-heading"><img class="organization-icon" src="assets/organizations/core-scientific.webp" width="24" height="24" alt="" loading="lazy">Core Scientific</h4>
       <h4>Information Technology Engineer (Jul 2025 - Oct 2025, Miami, FL)</h4>
       <ul>
         <li>Engineered endpoint security remediation pipelines using telemetry normalization &amp; correlation to identify vulnerable OpenSSL installations and scripted automated fixes.</li>
@@ -389,37 +384,31 @@
       <ul>
         <li>Supported high‑availability infrastructure, ensuring operational efficiency.</li>
       </ul>
-      <h4>Tech Mahindra</h4>
+      <h4 class="organization-heading"><img class="organization-icon" src="assets/organizations/tech-mahindra.png" width="24" height="24" alt="" loading="lazy">Tech Mahindra</h4>
          <h4>Associate Software Engineer (Jun 2022 - Jan 2023, Dallas, TX)</h4>
       <ul>
         <li>Built Java Spring Boot REST API with MongoDB &amp; AWS S3; added health indicators and security fixes.</li>
         <li>Automated log parsing with Python Lambdas and improved code quality using Sonar tools.</li>
       </ul>
-      <h4>The Guitar Center Company</h4>
+      <h4 class="organization-heading"><img class="organization-icon" src="assets/organizations/guitar-center.ico" width="24" height="24" alt="" loading="lazy">The Guitar Center Company</h4>
       <h4>Merchandising Technology Specialist (Jul 2021 - Mar 2022, Westlake Village, CA)</h4>
       <ul>
         <li>Managed 1,600 Macs across 300 stores; developed automation in AppleScript, Bash, Objective‑C for displays and installers.</li>
       </ul>
     </section>
-    <!--
-    <section id="education">
-      <h3>Education</h3>
-      <h4>
-                    <a href="https://example.com/home"> 
-        <img src="https://www.ggc.edu/sites/default/files/styles/wysiwyg_default/public/2026-01/Grizzlyhead_Full%20Color%20RGB.jpg?itok=d5POudMS" 
-             alt="A descriptive text for the image"
-             width="150" 
-             height="auto">
-    </a>
-        Bachelor of Science in Information Technology (Software Development), Georgia Gwinnett College, 2016 – 2021</h4>
-      <p>AI/ML Engineering Practicum, TripleTen — Completed October 2026</p>
-    </section>
--->
+
         
     <section id="education">
       <h3>Education</h3>
-      <h4>Bachelor of Science in Information Technology (Software Development), Georgia Gwinnett College, 2016 – 2021</h4>
-      <h4>AI/ML Engineering Practicum, TripleTen — Completed October 2026</h4>
+      <h4 class="organization-heading"><img class="organization-icon" src="assets/organizations/tripleten.png" width="24" height="24" alt="" loading="lazy">TripleTen</h4>
+      <p class="education-credential"><strong>AI/ML Engineering Practicum</strong></p>
+      <p class="education-dates">December 2025 – October 2026 · Completed</p>
+      <ul>
+        <li>Intensive applied AI/ML program focused on Python, data analysis, statistical modeling, and real-world workflows. Built models, pipelines, and automations using pandas, NumPy, scikit-learn, matplotlib; applied probability and statistics to business problems.</li>
+      </ul>
+      <h4 class="organization-heading"><img class="organization-icon" src="assets/organizations/ggc.ico" width="24" height="24" alt="" loading="lazy">Georgia Gwinnett College</h4>
+      <p class="education-credential"><strong>Bachelor of Science in Information Technology</strong><br>Software Development</p>
+      <p class="education-dates">2016 – 2021</p>
     </section>
 
     <section id="contact">
