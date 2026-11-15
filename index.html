@@ -47,7 +47,7 @@
     .education-credential {margin: 8px 0; line-height: 1.6;}
     .education-dates {color: #535e71; font-size: .9rem; margin: 6px 0 12px;}
     #education ul {line-height: 1.6;}
-    .organization-card {
+    .organization-card, .content-panel {
         background: #fff;
         border: 1px solid #e1e6ee;
         border-radius: 24px;
@@ -59,7 +59,11 @@
     .organization-card ul {padding-left: 20px; line-height: 1.6;}
     .organization-card li + li {margin-top: 6px;}
     .organization-card > :last-child {margin-bottom: 0;}
-    @media(max-width:700px){.organization-card{padding:20px;border-radius:20px;}}
+    .content-panel {line-height: 1.7;}
+    .content-panel > :first-child {margin-top: 0;}
+    .content-panel > :last-child {margin-bottom: 0;}
+    .content-panel a {color: #174da8; text-underline-offset: 3px; overflow-wrap: anywhere;}
+    @media(max-width:700px){.organization-card,.content-panel{padding:20px;border-radius:20px;}}
     section{margin-top:40px}
     .skills-list{columns:2 200px;list-style:none;padding:0}
     .skills-list li{background:#fff;margin:5px 0;padding:10px;border-radius:4px;border:1px solid #e0e0e0}
@@ -77,7 +81,7 @@
     .container{max-width:1100px}
     header{gap:24px;flex-wrap:wrap}
     header nav ul{flex-wrap:wrap;gap:14px 20px}
-    .section-intro{max-width:800px;line-height:1.65}
+    .section-intro{line-height:1.65}
     .project-nav{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
     .project-nav a{color:#174da8;background:white;border:1px solid #bdcce4;border-radius:24px;padding:10px 15px;font-size:.9rem}
     .project-nav span{margin-left:7px;color:#535e71}
@@ -94,8 +98,12 @@
     .project-card .project-type{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.055em;color:#5a6475;margin:0}
     .project-card .project-tools{font-size:.85rem;color:#535e71;margin-top:auto;padding-top:8px}
     .project-links{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:.88rem;font-weight:600}
-    .project-footnote{font-size:.9rem;line-height:1.6;margin-top:24px;color:#535e71}
-    .project-footnote a{color:#174da8}
+    .project-footnote{display:flex;align-items:center;gap:16px;font-size:.9rem;line-height:1.65;margin-top:24px;padding:20px 26px;border-radius:32px;background:#343943;color:#f3f5f8;box-shadow:0 4px 18px rgba(36,48,72,.08)}
+    .project-footnote p{margin:0;min-width:0}
+    .project-footnote a{color:#c5ddff;text-underline-offset:3px;font-weight:600}
+    .project-footnote a:hover{color:#fff}
+    .info-icon{width:24px;height:24px;flex-shrink:0;color:#e0e8f5}
+    @media(max-width:700px){.project-footnote{align-items:flex-start;gap:12px;padding:20px;border-radius:24px}.info-icon{margin-top:1px}}
     @media(max-width:700px){header{padding:30px 20px}header h1{white-space:normal}header nav ul{justify-content:flex-start}#hero{padding:30px 0}#hero h2{font-size:1.65rem}.container{margin-top:24px}.project-grid{grid-template-columns:1fr}.project-card{padding:20px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
@@ -126,7 +134,7 @@
     </section>
     <section id="projects" aria-labelledby="projects-title">
       <h3 id="projects-title">Project Portfolio</h3>
-      <p class="section-intro">Explore software, analysis, and machine-learning work from college, completed AI/ML training, and independent development. Each project links to its source, notebook, or recovered artifacts.</p>
+      <p class="section-intro content-panel">Explore software, analysis, and machine-learning work from college, completed AI/ML training, and independent development. Each project links to its source, notebook, or recovered artifacts.</p>
       <nav class="project-nav" aria-label="Project categories">
         <a href="#ai-ml">AI, Machine Learning &amp; Computer Vision <span>7</span></a>
         <a href="#data-analysis">Data Analysis &amp; Statistics <span>5</span></a>
@@ -342,11 +350,14 @@
           </article>
         </div>
       </section>
-      <p class="project-footnote">Looking for more? <a href="https://github.com/devinkristopher?tab=repositories">Browse all public repositories</a>. Coursework is identified separately from professional experience; the AWS lab is not an AWS certification.</p>
+      <aside class="project-footnote" aria-label="More projects and coursework information">
+        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><path d="M12 11v6"></path><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"></circle></svg>
+        <p>Looking for more? <a href="https://github.com/devinkristopher?tab=repositories">Browse all public repositories</a>. Coursework is identified separately from professional experience; the AWS lab is not an AWS certification.</p>
+      </aside>
     </section>
     <section id="about">
       <h3>About Me</h3>
-      <p>Software &amp; systems engineer with a strong foundation in artificial intelligence/machine learning and endpoint security. I have designed automated remediation workflows, engineered cloud-based (AWS) RESTful Java APIs, managed large-scale device fleets, and developed ML models in applied settings. My experience spans full‑stack development, data analysis, and security automation across various industries.</p>
+      <p class="content-panel">Software &amp; systems engineer with a strong foundation in artificial intelligence/machine learning and endpoint security. I have designed automated remediation workflows, engineered cloud-based (AWS) RESTful Java APIs, managed large-scale device fleets, and developed ML models in applied settings. My experience spans full‑stack development, data analysis, and security automation across various industries.</p>
     </section>
     <section id="skills">
       <h3>Skills</h3>
@@ -435,9 +446,11 @@
 
     <section id="contact">
       <h3>Contact</h3>
+      <div class="content-panel">
       <p>Mobile: (678) 477‑5360</p>
       <p>Email: <a href="mailto:devinkristopher@icloud.com">devinkristopher@icloud.com</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/devinkristopher" target="_blank" rel="noopener noreferrer">linkedin.com/in/devinkristopher</a></p>
+      </div>
     </section>
   </main>
 </body>
