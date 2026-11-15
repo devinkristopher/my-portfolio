@@ -105,7 +105,7 @@
     .section-shell .project-footnote{border:1px solid var(--shell-border)}
     /* A full-width dark backing seals the sticky stack, including its corners and gutters. */
     .sticky-section-heading{position:sticky;top:0;z-index:10;margin:0 -24px 20px;background:var(--page-bg)}
-    @media screen and (min-height:501px){.sticky-section-heading.is-pinned{background:var(--shell)}}
+    @media screen and (min-height:501px){.sticky-section-heading.is-pinned{background:var(--shell)}.sticky-section-heading.is-pinned > h3{border-top-left-radius:0;border-top-right-radius:0}}
     .sticky-section-heading > h3{box-sizing:border-box;min-height:64px;display:flex;align-items:center;gap:12px;margin:0;padding:16px 24px;color:var(--on-shell);background:var(--shell);border:0;border-left:4px solid var(--accent);border-bottom:1px solid var(--shell-border);border-radius:28px 28px 0 0;box-shadow:none}
     .section-heading-icon{width:24px;height:24px;flex-shrink:0;color:var(--on-shell-accent)}
     @media(max-width:700px){.container{padding:0 12px}.section-shell{padding:0 12px 16px;border-radius:24px}.sticky-section-heading{margin-left:-12px;margin-right:-12px}.sticky-section-heading > h3{padding:14px 16px;gap:10px;border-radius:24px 24px 0 0}.section-heading-icon{width:22px;height:22px}}
