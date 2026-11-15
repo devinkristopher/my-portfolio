@@ -47,6 +47,19 @@
     .education-credential {margin: 8px 0; line-height: 1.6;}
     .education-dates {color: #535e71; font-size: .9rem; margin: 6px 0 12px;}
     #education ul {line-height: 1.6;}
+    .organization-card {
+        background: #fff;
+        border: 1px solid #e1e6ee;
+        border-radius: 24px;
+        padding: 28px;
+        margin-top: 18px;
+        box-shadow: 0 4px 18px rgba(36, 48, 72, .045);
+    }
+    .organization-card > .organization-heading {margin: 0 0 20px;}
+    .organization-card ul {padding-left: 20px; line-height: 1.6;}
+    .organization-card li + li {margin-top: 6px;}
+    .organization-card > :last-child {margin-bottom: 0;}
+    @media(max-width:700px){.organization-card{padding:20px;border-radius:20px;}}
     section{margin-top:40px}
     .skills-list{columns:2 200px;list-style:none;padding:0}
     .skills-list li{background:#fff;margin:5px 0;padding:10px;border-radius:4px;border:1px solid #e0e0e0}
@@ -365,50 +378,59 @@
     </section>
     <section id="experience">
       <h3>Experience</h3>
-      <h4 class="organization-heading"><img class="organization-icon" src="assets/organizations/core-scientific.webp" width="24" height="24" alt="" loading="lazy">Core Scientific</h4>
-      <h4>Information Technology Engineer (Jul 2025 - Oct 2025, Miami, FL)</h4>
-      <ul>
-        <li>Engineered endpoint security remediation pipelines using telemetry normalization &amp; correlation to identify vulnerable OpenSSL installations and scripted automated fixes.</li>
-      </ul>
-      <h4>Information Technology Engineer (Apr 2024 - Jun 2025, Austin, TX)</h4>
-      <ul>
-        <li>Managed Microsoft Intune and Jamf platforms across ~500 devices; built zero-touch provisioning workflows in PowerShell.</li>
-        <li>Developed EDR workflows with Defender, Intune and Jamf, creating remediation scripts to enforce compliance.</li>
-        <li>Architected Jamf lifecycles for iPhones; owned Apple Business Manager and Exchange Online automation.</li>
-      </ul>
-      <h4>Data Center Technician II (Dec 2023 - Apr 2024, Marble, NC)</h4>
-      <ul>
-        <li>Created Python tools and an iOS barcode scanner app to streamline asset management and outage analysis.</li>
-      </ul>
-      <h4>Data Center Technician (Apr 2023 - Dec 2023, Marble, NC)</h4>
-      <ul>
-        <li>Supported high‑availability infrastructure, ensuring operational efficiency.</li>
-      </ul>
-      <h4 class="organization-heading"><img class="organization-icon" src="assets/organizations/tech-mahindra.png" width="24" height="24" alt="" loading="lazy">Tech Mahindra</h4>
-         <h4>Associate Software Engineer (Jun 2022 - Jan 2023, Dallas, TX)</h4>
-      <ul>
-        <li>Built Java Spring Boot REST API with MongoDB &amp; AWS S3; added health indicators and security fixes.</li>
-        <li>Automated log parsing with Python Lambdas and improved code quality using Sonar tools.</li>
-      </ul>
-      <h4 class="organization-heading"><img class="organization-icon" src="assets/organizations/guitar-center.ico" width="24" height="24" alt="" loading="lazy">The Guitar Center Company</h4>
-      <h4>Merchandising Technology Specialist (Jul 2021 - Mar 2022, Westlake Village, CA)</h4>
-      <ul>
-        <li>Managed 1,600 Macs across 300 stores; developed automation in AppleScript, Bash, Objective‑C for displays and installers.</li>
-      </ul>
+      <article class="organization-card" aria-labelledby="core-scientific-title">
+        <h4 id="core-scientific-title" class="organization-heading"><img class="organization-icon" src="assets/organizations/core-scientific.webp" width="24" height="24" alt="" loading="lazy">Core Scientific</h4>
+        <h4>Information Technology Engineer (Jul 2025 - Oct 2025, Miami, FL)</h4>
+        <ul>
+          <li>Engineered endpoint security remediation pipelines using telemetry normalization &amp; correlation to identify vulnerable OpenSSL installations and scripted automated fixes.</li>
+        </ul>
+        <h4>Information Technology Engineer (Apr 2024 - Jun 2025, Austin, TX)</h4>
+        <ul>
+          <li>Managed Microsoft Intune and Jamf platforms across ~500 devices; built zero-touch provisioning workflows in PowerShell.</li>
+          <li>Developed EDR workflows with Defender, Intune and Jamf, creating remediation scripts to enforce compliance.</li>
+          <li>Architected Jamf lifecycles for iPhones; owned Apple Business Manager and Exchange Online automation.</li>
+        </ul>
+        <h4>Data Center Technician II (Dec 2023 - Apr 2024, Marble, NC)</h4>
+        <ul>
+          <li>Created Python tools and an iOS barcode scanner app to streamline asset management and outage analysis.</li>
+        </ul>
+        <h4>Data Center Technician (Apr 2023 - Dec 2023, Marble, NC)</h4>
+        <ul>
+          <li>Supported high‑availability infrastructure, ensuring operational efficiency.</li>
+        </ul>
+      </article>
+      <article class="organization-card" aria-labelledby="tech-mahindra-title">
+        <h4 id="tech-mahindra-title" class="organization-heading"><img class="organization-icon" src="assets/organizations/tech-mahindra.png" width="24" height="24" alt="" loading="lazy">Tech Mahindra</h4>
+           <h4>Associate Software Engineer (Jun 2022 - Jan 2023, Dallas, TX)</h4>
+        <ul>
+          <li>Built Java Spring Boot REST API with MongoDB &amp; AWS S3; added health indicators and security fixes.</li>
+          <li>Automated log parsing with Python Lambdas and improved code quality using Sonar tools.</li>
+        </ul>
+      </article>
+      <article class="organization-card" aria-labelledby="guitar-center-title">
+        <h4 id="guitar-center-title" class="organization-heading"><img class="organization-icon" src="assets/organizations/guitar-center.ico" width="24" height="24" alt="" loading="lazy">The Guitar Center Company</h4>
+        <h4>Merchandising Technology Specialist (Jul 2021 - Mar 2022, Westlake Village, CA)</h4>
+        <ul>
+          <li>Managed 1,600 Macs across 300 stores; developed automation in AppleScript, Bash, Objective‑C for displays and installers.</li>
+        </ul>
+      </article>
     </section>
 
-        
     <section id="education">
       <h3>Education</h3>
-      <h4 class="organization-heading"><img class="organization-icon" src="assets/organizations/tripleten.png" width="24" height="24" alt="" loading="lazy">TripleTen</h4>
-      <p class="education-credential"><strong>AI/ML Engineering Practicum</strong></p>
-      <p class="education-dates">December 2025 – October 2026 · Completed</p>
-      <ul>
-        <li>Intensive applied AI/ML program focused on Python, data analysis, statistical modeling, and real-world workflows. Built models, pipelines, and automations using pandas, NumPy, scikit-learn, matplotlib; applied probability and statistics to business problems.</li>
-      </ul>
-      <h4 class="organization-heading"><img class="organization-icon" src="assets/organizations/ggc.ico" width="24" height="24" alt="" loading="lazy">Georgia Gwinnett College</h4>
-      <p class="education-credential"><strong>Bachelor of Science in Information Technology</strong><br>Software Development</p>
-      <p class="education-dates">2016 – 2021</p>
+      <article class="organization-card" aria-labelledby="tripleten-title">
+        <h4 id="tripleten-title" class="organization-heading"><img class="organization-icon" src="assets/organizations/tripleten.png" width="24" height="24" alt="" loading="lazy">TripleTen</h4>
+        <p class="education-credential"><strong>AI/ML Engineering Practicum</strong></p>
+        <p class="education-dates">December 2025 – October 2026 · Completed</p>
+        <ul>
+          <li>Intensive applied AI/ML program focused on Python, data analysis, statistical modeling, and real-world workflows. Built models, pipelines, and automations using pandas, NumPy, scikit-learn, matplotlib; applied probability and statistics to business problems.</li>
+        </ul>
+      </article>
+      <article class="organization-card" aria-labelledby="ggc-title">
+        <h4 id="ggc-title" class="organization-heading"><img class="organization-icon" src="assets/organizations/ggc.ico" width="24" height="24" alt="" loading="lazy">Georgia Gwinnett College</h4>
+        <p class="education-credential"><strong>Bachelor of Science in Information Technology</strong><br>Software Development</p>
+        <p class="education-dates">2016 – 2021</p>
+      </article>
     </section>
 
     <section id="contact">
