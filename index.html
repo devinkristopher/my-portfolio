@@ -87,9 +87,9 @@
     .skill-evidence a{color:#174da8;text-underline-offset:3px}
     @media(max-width:700px){.skills-grid{grid-template-columns:1fr}.skill-card{padding:20px;border-radius:20px}.hero-location{gap:4px 10px}.location-divider{display:none}.location-availability{flex-basis:100%}}
 
-    html{scroll-behavior:smooth;scroll-padding-top:72px}
+    :root{--section-heading-height:54px;--project-heading-height:76px}
+    html{scroll-behavior:smooth;scroll-padding-top:calc(var(--section-heading-height) + 16px);scroll-padding-bottom:96px}
     .container > section > h3{position:sticky;top:0;z-index:10;box-sizing:border-box;min-height:54px;display:flex;align-items:center;padding:12px 16px;background:#f4f4f4;border-radius:0 0 12px 0;box-shadow:0 1px 0 #dbe2eb}
-    @media print{.container > section > h3{position:static;box-shadow:none}}
     a:focus-visible{outline:3px solid #e09200;outline-offset:4px}
     .skip-link{position:absolute;left:16px;top:-80px;padding:12px;background:white;color:#174da8;z-index:3}
     .skip-link:focus{top:12px}
@@ -104,7 +104,9 @@
     .project-nav .category-label{min-width:0}
     .project-nav .category-count{margin-left:1px;color:#535e71;font-variant-numeric:tabular-nums}
     .project-group{margin-top:36px}
-    .project-group>h4{font-size:1.15rem;margin-bottom:18px}
+    .project-group>h4{position:sticky;top:var(--section-heading-height);z-index:9;display:flex;align-items:center;gap:12px;box-sizing:border-box;font-size:1.05rem;line-height:1.4;margin-bottom:18px;padding:12px 16px;color:#174da8;background:#e7efff;border:1px solid #b5caef;border-bottom:3px solid #1e68e7;border-radius:12px;box-shadow:0 3px 8px rgba(36,48,72,.06)}
+    .project-heading-icon{width:22px;height:22px;flex-shrink:0}
+    .project-card a{scroll-margin-top:var(--project-heading-height)}
     .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
     .project-card{background:#fff;border:1px solid #dbe2eb;border-radius:10px;padding:24px;display:flex;flex-direction:column;line-height:1.6;min-width:0}
     .project-card.featured{border-top:4px solid #1e68e7;padding-top:21px}
@@ -123,12 +125,21 @@
     .info-icon{width:24px;height:24px;flex-shrink:0;color:#e0e8f5}
     @media(max-width:700px){.project-footnote{align-items:flex-start;gap:12px;padding:20px;border-radius:24px}.info-icon{margin-top:1px}}
     @media(max-width:700px){header{padding:30px 20px}header h1{white-space:normal}header nav ul{justify-content:flex-start}#hero{padding:30px 0}#hero h2{font-size:1.65rem}.container{margin-top:24px}.project-grid{grid-template-columns:1fr}.project-card{padding:20px}}
+    body{padding-bottom:96px}
+    .back-to-top{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:30;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-sizing:border-box;min-width:48px;min-height:48px;padding:12px 16px;border:1px solid #174da8;border-radius:999px;background:#174da8;color:#fff;font-size:.9rem;font-weight:700;line-height:1.4;text-decoration:none;box-shadow:0 4px 16px rgba(23,77,168,.25)}
+    .back-to-top svg{width:20px;height:20px;flex-shrink:0}
+    .back-to-top:hover{background:#103c88}
+    .back-to-top:focus-visible{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 6px #174da8}
+    .back-to-top[hidden]{display:none}
+    #top:focus-visible{outline:3px solid #fff;outline-offset:-6px}
+    @media(max-height:500px){.container > section > h3,.project-group>h4{position:static}html{scroll-padding-top:16px}}
+    @media print{.container > section > h3,.project-group>h4{position:static;box-shadow:none}.back-to-top{display:none}body{padding-bottom:0}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
 <body>
   <a class="skip-link" href="#projects">Skip to projects</a>
-  <header>
+  <header id="top" tabindex="-1">
     <h1>Devin Rogers</h1>
     <nav aria-label="main navigation">
       <ul>
@@ -160,7 +171,7 @@
         <a href="#cloud-mlops"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18a5 5 0 1 1 1-9 6 6 0 0 1 11-2 5.5 5.5 0 0 1 0 11"/><path d="m8 16 4-4 4 4m-4-4v10"/></svg><span class="category-label">Cloud, Deployment &amp; MLOps</span><span class="category-count">5</span></a>
       </nav>
       <section id="ai-ml" class="project-group" aria-labelledby="ai-ml-title">
-        <h4 id="ai-ml-title">AI, Machine Learning &amp; Computer Vision</h4>
+        <h4 id="ai-ml-title"><svg class="project-heading-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3m-13-2 3-4 3 2"/></svg><span>AI, Machine Learning &amp; Computer Vision</span></h4>
         <div class="project-grid">
           <article class="project-card featured">
             <p class="project-type">TripleTen capstone + continued development</p>
@@ -228,7 +239,7 @@
         </div>
       </section>
       <section id="data-analysis" class="project-group" aria-labelledby="data-analysis-title">
-        <h4 id="data-analysis-title">Data Analysis &amp; Statistics</h4>
+        <h4 id="data-analysis-title"><svg class="project-heading-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 4 18 4 18 0V5M3 12c0 4 18 4 18 0"/></svg><span>Data Analysis &amp; Statistics</span></h4>
         <div class="project-grid">
           <article class="project-card">
             <p class="project-type">TripleTen coursework</p>
@@ -278,7 +289,7 @@
         </div>
       </section>
       <section id="software-mobile" class="project-group" aria-labelledby="software-mobile-title">
-        <h4 id="software-mobile-title">Software, APIs &amp; iOS</h4>
+        <h4 id="software-mobile-title"><svg class="project-heading-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m8 5-6 7 6 7m8-14 6 7-6 7m-3-17-2 20"/></svg><span>Software, APIs &amp; iOS</span></h4>
         <div class="project-grid">
           <article class="project-card">
             <p class="project-type">TripleTen coursework</p>
@@ -323,7 +334,7 @@
         </div>
       </section>
       <section id="cloud-mlops" class="project-group" aria-labelledby="cloud-mlops-title">
-        <h4 id="cloud-mlops-title">Cloud, Deployment &amp; MLOps</h4>
+        <h4 id="cloud-mlops-title"><svg class="project-heading-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18a5 5 0 1 1 1-9 6 6 0 0 1 11-2 5.5 5.5 0 0 1 0 11"/><path d="m8 16 4-4 4 4m-4-4v10"/></svg><span>Cloud, Deployment &amp; MLOps</span></h4>
         <div class="project-grid">
           <article class="project-card">
             <p class="project-type">TripleTen coursework</p>
@@ -559,5 +570,47 @@
       </div>
     </section>
   </main>
+  <a class="back-to-top" href="#top" aria-label="Back to top and main navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 12 6-6 6 6M12 6v14M5 3h14"/></svg><span>Top</span></a>
+  <script>
+    (() => {
+      const top = document.querySelector('#top');
+      const backToTop = document.querySelector('.back-to-top');
+      const sectionHeading = document.querySelector('#projects-title');
+      const categoryHeadings = [...document.querySelectorAll('.project-group > h4')];
+
+      // Let wrapped text and zoom determine the space between the two sticky levels.
+      const measureHeadings = () => {
+        document.documentElement.style.setProperty('--section-heading-height', `${sectionHeading.getBoundingClientRect().height}px`);
+        document.documentElement.style.setProperty('--project-heading-height', `${Math.max(...categoryHeadings.map(heading => heading.getBoundingClientRect().height))}px`);
+      };
+      measureHeadings();
+      if ('ResizeObserver' in window) {
+        const sizes = new ResizeObserver(measureHeadings);
+        [sectionHeading, ...categoryHeadings].forEach(heading => sizes.observe(heading));
+      }
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(([entry]) => {
+          backToTop.hidden = entry.isIntersecting;
+        }).observe(top);
+      }
+      backToTop.addEventListener('click', () => top.focus({preventScroll: true}));
+
+      // Keep keyboard focus fully visible, including when tabbing backwards under a sticky title.
+      document.addEventListener('focusin', event => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement) || !target.closest('main') || !target.matches(':focus-visible')) return;
+        const pinnedBottom = Math.max(0, ...[...document.querySelectorAll('main > section > h3, .project-group > h4')].map(heading => {
+          const style = getComputedStyle(heading);
+          const rect = heading.getBoundingClientRect();
+          return style.position === 'sticky' && rect.top <= parseFloat(style.top) + 1 && rect.bottom > 0 ? rect.bottom : 0;
+        }));
+        const rect = target.getBoundingClientRect();
+        const bottomSpace = backToTop.hidden ? 12 : 88;
+        if (rect.top < pinnedBottom + 12 || rect.bottom > innerHeight - bottomSpace) {
+          target.scrollIntoView({block: 'center', behavior: 'instant'});
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
