@@ -103,8 +103,9 @@
     .section-shell .content-panel,.section-shell .project-card,.section-shell .skill-card,.section-shell .organization-card{color:var(--text)}
     .section-shell > .skills-intro{color:var(--on-shell-muted);padding:0 4px}
     .section-shell .project-footnote{border:1px solid var(--shell-border)}
-    /* Opaque backings keep scrolling cards out of the rounded heading corners. */
+    /* A full-width dark backing seals the sticky stack, including its corners and gutters. */
     .sticky-section-heading{position:sticky;top:0;z-index:10;margin:0 -24px 20px;background:var(--page-bg)}
+    @media screen and (min-height:501px){.sticky-section-heading.is-pinned{background:var(--shell)}}
     .sticky-section-heading > h3{box-sizing:border-box;min-height:64px;display:flex;align-items:center;gap:12px;margin:0;padding:16px 24px;color:var(--on-shell);background:var(--shell);border:0;border-left:4px solid var(--accent);border-bottom:1px solid var(--shell-border);border-radius:28px 28px 0 0;box-shadow:none}
     .section-heading-icon{width:24px;height:24px;flex-shrink:0;color:var(--on-shell-accent)}
     @media(max-width:700px){.container{padding:0 12px}.section-shell{padding:0 12px 16px;border-radius:24px}.sticky-section-heading{margin-left:-12px;margin-right:-12px}.sticky-section-heading > h3{padding:14px 16px;gap:10px;border-radius:24px 24px 0 0}.section-heading-icon{width:22px;height:22px}}
@@ -124,7 +125,8 @@
     .project-nav .category-label{min-width:0}
     .project-nav .category-count{margin-left:1px;color:var(--muted);font-variant-numeric:tabular-nums}
     .project-group{margin-top:36px}
-    .sticky-category-heading{position:sticky;top:var(--section-heading-height);z-index:9;margin:24px 0 18px;background:var(--shell)}
+    .sticky-category-heading{position:sticky;top:var(--section-heading-height);z-index:9;margin:24px -24px 18px;padding:0 24px;background:var(--shell);box-shadow:0 -1px 0 var(--shell)}
+    @media(max-width:700px){.sticky-category-heading{margin-left:-12px;margin-right:-12px;padding-left:12px;padding-right:12px}}
     .sticky-category-heading > h4{display:flex;align-items:center;gap:12px;box-sizing:border-box;font-size:1.05rem;line-height:1.4;margin:0;padding:12px 16px;color:var(--link);background:var(--accent-soft);border:1px solid var(--accent-border);border-bottom:3px solid var(--accent);border-radius:12px;box-shadow:0 3px 8px rgba(36,48,72,.06)}
     .project-heading-icon{width:22px;height:22px;flex-shrink:0}
     .project-card a{scroll-margin-top:var(--project-heading-height)}
@@ -154,7 +156,7 @@
     .back-to-top[hidden]{display:none}
     #top:focus-visible{outline:3px solid var(--surface);outline-offset:-6px}
     @media(max-height:500px){.sticky-section-heading,.sticky-category-heading{position:static}html{scroll-padding-top:16px}}
-    @media print{.section-shell{background:var(--surface);color:var(--text);box-shadow:none}.section-shell > .skills-intro{color:var(--muted)}.sticky-section-heading > h3{background:var(--surface);color:var(--shell)}.section-heading-icon{color:var(--link)}.sticky-section-heading,.sticky-category-heading{position:static;background:var(--surface)}.sticky-section-heading > h3,.sticky-category-heading > h4{box-shadow:none}.back-to-top{display:none}body{padding-bottom:0}}
+    @media print{.section-shell{background:var(--surface);color:var(--text);box-shadow:none}.section-shell > .skills-intro{color:var(--muted)}.sticky-section-heading > h3{background:var(--surface);color:var(--shell)}.section-heading-icon{color:var(--link)}.sticky-section-heading,.sticky-category-heading{position:static;background:var(--surface);box-shadow:none}.sticky-section-heading > h3,.sticky-category-heading > h4{box-shadow:none}.back-to-top{display:none}body{padding-bottom:0}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
@@ -598,6 +600,24 @@
       const backToTop = document.querySelector('.back-to-top');
       const sectionHeading = document.querySelector('#projects-title');
       const categoryHeadings = [...document.querySelectorAll('.sticky-category-heading > h4')];
+      const stickySectionHeadings = [...document.querySelectorAll('.sticky-section-heading')];
+
+      // Keep the rounded section entrance, but fill its corners once it reaches the viewport edge.
+      let pinFrame = 0;
+      const updatePinnedHeadings = () => {
+        pinFrame = 0;
+        const pinned = stickySectionHeadings.map(heading => {
+          const rect = heading.getBoundingClientRect();
+          return rect.top <= 0 && rect.bottom > 0;
+        });
+        stickySectionHeadings.forEach((heading, index) => heading.classList.toggle('is-pinned', pinned[index]));
+      };
+      const queuePinnedUpdate = () => {
+        if (!pinFrame) pinFrame = requestAnimationFrame(updatePinnedHeadings);
+      };
+      window.addEventListener('scroll', queuePinnedUpdate, {passive: true});
+      window.addEventListener('resize', queuePinnedUpdate);
+      updatePinnedHeadings();
 
       // Let wrapped text and zoom determine the space between the two sticky levels.
       const measureHeadings = () => {
