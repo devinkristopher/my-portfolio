@@ -87,9 +87,16 @@
     .skill-evidence a{color:#174da8;text-underline-offset:3px}
     @media(max-width:700px){.skills-grid{grid-template-columns:1fr}.skill-card{padding:20px;border-radius:20px}.hero-location{gap:4px 10px}.location-divider{display:none}.location-availability{flex-basis:100%}}
 
-    :root{--section-heading-height:54px;--project-heading-height:76px}
+    :root{--section-heading-height:64px;--project-heading-height:76px}
     html{scroll-behavior:smooth;scroll-padding-top:calc(var(--section-heading-height) + 16px);scroll-padding-bottom:96px}
-    .container > section > h3{position:sticky;top:0;z-index:10;box-sizing:border-box;min-height:54px;display:flex;align-items:center;padding:12px 16px;color:#f5f8ff;background:#30394b;border:1px solid #263145;border-left:4px solid #1e68e7;border-radius:16px;box-shadow:0 4px 14px rgba(36,48,72,.12)}
+    .section-shell{padding:0 24px 24px;background:#30394b;border:1px solid #263145;border-radius:28px;box-shadow:0 6px 24px rgba(36,48,72,.10);color:#f5f8ff}
+    .section-shell > :last-child{margin-bottom:0}
+    .section-shell .content-panel,.section-shell .project-card,.section-shell .skill-card,.section-shell .organization-card{color:#333}
+    .section-shell > .skills-intro{color:#dce5f5;padding:0 4px}
+    .section-shell .project-footnote{border:1px solid #536079}
+    .container > section > h3{position:sticky;top:0;z-index:10;box-sizing:border-box;min-height:64px;display:flex;align-items:center;gap:12px;margin:0 -24px 20px;padding:16px 24px;color:#f5f8ff;background:#30394b;border:0;border-left:4px solid #1e68e7;border-bottom:1px solid #536079;border-radius:28px 28px 0 0;box-shadow:none}
+    .section-heading-icon{width:24px;height:24px;flex-shrink:0;color:#b9d3ff}
+    @media(max-width:700px){.container{padding:0 12px}.section-shell{padding:0 12px 16px;border-radius:24px}.container > section > h3{margin-left:-12px;margin-right:-12px;padding:14px 16px;gap:10px;border-radius:24px 24px 0 0}.section-heading-icon{width:22px;height:22px}}
     a:focus-visible{outline:3px solid #e09200;outline-offset:4px}
     .skip-link{position:absolute;left:16px;top:-80px;padding:12px;background:white;color:#174da8;z-index:3}
     .skip-link:focus{top:12px}
@@ -133,7 +140,7 @@
     .back-to-top[hidden]{display:none}
     #top:focus-visible{outline:3px solid #fff;outline-offset:-6px}
     @media(max-height:500px){.container > section > h3,.project-group>h4{position:static}html{scroll-padding-top:16px}}
-    @media print{.container > section > h3,.project-group>h4{position:static;box-shadow:none}.back-to-top{display:none}body{padding-bottom:0}}
+    @media print{.section-shell{background:#fff;color:#333;box-shadow:none}.section-shell > .skills-intro{color:#535e71}.container > section > h3{background:#fff;color:#30394b}.section-heading-icon{color:#174da8}.container > section > h3,.project-group>h4{position:static;box-shadow:none}.back-to-top{display:none}body{padding-bottom:0}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
@@ -161,8 +168,8 @@
         <p>Where software engineering, IT infrastructure and AI + ML intersect to solve complex problems.</p>
       </div>
     </section>
-    <section id="projects" aria-labelledby="projects-title">
-      <h3 id="projects-title">Project Portfolio</h3>
+    <section id="projects" class="section-shell" aria-labelledby="projects-title">
+      <h3 id="projects-title"><svg class="section-heading-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7V5a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/><path d="M3 9h18"/></svg><span>Project Portfolio</span></h3>
       <p class="section-intro content-panel">Explore software, analysis, and machine-learning work from college, completed AI/ML training, and independent development. Each project links to its source, notebook, or recovered artifacts.</p>
       <nav class="project-nav" aria-label="Project categories">
         <a href="#ai-ml"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3m-13-2 3-4 3 2"/></svg><span class="category-label">AI, Machine Learning &amp; Computer Vision</span><span class="category-count">7</span></a>
@@ -384,12 +391,12 @@
         <p>Looking for more? <a href="https://github.com/devinkristopher?tab=repositories">Browse all public repositories</a>. Coursework is identified separately from professional experience; the AWS lab is not an AWS certification.</p>
       </aside>
     </section>
-    <section id="about">
-      <h3>About Me</h3>
+    <section id="about" class="section-shell">
+      <h3><svg class="section-heading-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg><span>About Me</span></h3>
       <p class="content-panel">Software &amp; systems engineer with a strong foundation in artificial intelligence/machine learning and endpoint security. I have designed automated remediation workflows, engineered cloud-based (AWS) RESTful Java APIs, managed large-scale device fleets, and developed ML models in applied settings. My experience spans full‑stack development, data analysis, and security automation across various industries.</p>
     </section>
-    <section id="skills" aria-labelledby="skills-title">
-      <h3 id="skills-title">Skills</h3>
+    <section id="skills" class="section-shell" aria-labelledby="skills-title">
+      <h3 id="skills-title"><svg class="section-heading-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 6a5 5 0 0 0-6 6L2 18a2.8 2.8 0 0 0 4 4l6-6a5 5 0 0 0 6-6l-4 3-3-3 3-4Z"/><path d="m17 3 4 4m-2-6 4 4M4 20h.01"/></svg><span>Skills</span></h3>
       <p class="skills-intro">A toolkit built across enterprise engineering, software development, and applied AI/ML. Explore each area and the work behind it.</p>
       <div class="skills-grid">
         <article class="skill-card" aria-labelledby="skill-software">
@@ -504,8 +511,8 @@
         </article>
       </div>
     </section>
-    <section id="experience">
-      <h3>Experience</h3>
+    <section id="experience" class="section-shell">
+      <h3><svg class="section-heading-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M2 12a25 25 0 0 0 20 0M10 12v3h4v-3"/></svg><span>Experience</span></h3>
       <article class="organization-card" aria-labelledby="core-scientific-title">
         <h4 id="core-scientific-title" class="organization-heading"><img class="organization-icon" src="assets/organizations/core-scientific.webp" width="24" height="24" alt="" loading="lazy">Core Scientific</h4>
         <h4>Information Technology Engineer (Jul 2025 - Oct 2025, Miami, FL)</h4>
@@ -544,8 +551,8 @@
       </article>
     </section>
 
-    <section id="education">
-      <h3>Education</h3>
+    <section id="education" class="section-shell">
+      <h3><svg class="section-heading-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m2 9 10-6 10 6-10 6L2 9ZM6 12v6c4 3 8 3 12 0v-6M22 9v9"/></svg><span>Education</span></h3>
       <article class="organization-card" aria-labelledby="tripleten-title">
         <h4 id="tripleten-title" class="organization-heading"><img class="organization-icon" src="assets/organizations/tripleten.png" width="24" height="24" alt="" loading="lazy">TripleTen</h4>
         <p class="education-credential"><strong>AI/ML Engineering Practicum</strong></p>
@@ -561,8 +568,8 @@
       </article>
     </section>
 
-    <section id="contact">
-      <h3>Contact</h3>
+    <section id="contact" class="section-shell">
+      <h3><svg class="section-heading-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg><span>Contact</span></h3>
       <div class="content-panel">
         <p class="contact-row"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 2 4 5-3 3c2 4 3 5 7 7l3-3 5 4c-1 4-3 5-6 4C8 19 5 16 2 8 1 5 2 3 6 2Z"/></svg><span>Mobile: <a href="tel:+16784775360">(678) 477-5360</a></span></p>
         <p class="contact-row"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg><span>Email: <a href="mailto:devinkristopher@icloud.com">devinkristopher@icloud.com</a></span></p>
