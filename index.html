@@ -87,7 +87,9 @@
     .skill-evidence a{color:#174da8;text-underline-offset:3px}
     @media(max-width:700px){.skills-grid{grid-template-columns:1fr}.skill-card{padding:20px;border-radius:20px}.hero-location{gap:4px 10px}.location-divider{display:none}.location-availability{flex-basis:100%}}
 
-    html{scroll-behavior:smooth;scroll-padding-top:24px}
+    html{scroll-behavior:smooth;scroll-padding-top:72px}
+    .container > section > h3{position:sticky;top:0;z-index:10;box-sizing:border-box;min-height:54px;display:flex;align-items:center;padding:12px 16px;background:#f4f4f4;border-radius:0 0 12px 0;box-shadow:0 1px 0 #dbe2eb}
+    @media print{.container > section > h3{position:static;box-shadow:none}}
     a:focus-visible{outline:3px solid #e09200;outline-offset:4px}
     .skip-link{position:absolute;left:16px;top:-80px;padding:12px;background:white;color:#174da8;z-index:3}
     .skip-link:focus{top:12px}
@@ -96,8 +98,11 @@
     header nav ul{flex-wrap:wrap;gap:14px 20px}
     .section-intro{line-height:1.65}
     .project-nav{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
-    .project-nav a{color:#174da8;background:white;border:1px solid #bdcce4;border-radius:24px;padding:10px 15px;font-size:.9rem}
-    .project-nav span{margin-left:7px;color:#535e71}
+    .project-nav a{display:inline-flex;align-items:center;gap:9px;max-width:100%;box-sizing:border-box;color:#174da8;background:white;border:1px solid #bdcce4;border-radius:24px;padding:10px 15px;font-size:.9rem;line-height:1.4;text-decoration:none}
+    .project-nav a:hover{background:#edf3ff;border-color:#8caee7}
+    .project-nav .category-icon{width:20px;height:20px;flex-shrink:0;color:#1c5cc6}
+    .project-nav .category-label{min-width:0}
+    .project-nav .category-count{margin-left:1px;color:#535e71;font-variant-numeric:tabular-nums}
     .project-group{margin-top:36px}
     .project-group>h4{font-size:1.15rem;margin-bottom:18px}
     .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
@@ -149,10 +154,10 @@
       <h3 id="projects-title">Project Portfolio</h3>
       <p class="section-intro content-panel">Explore software, analysis, and machine-learning work from college, completed AI/ML training, and independent development. Each project links to its source, notebook, or recovered artifacts.</p>
       <nav class="project-nav" aria-label="Project categories">
-        <a href="#ai-ml">AI, Machine Learning &amp; Computer Vision <span>7</span></a>
-        <a href="#data-analysis">Data Analysis &amp; Statistics <span>5</span></a>
-        <a href="#software-mobile">Software, APIs &amp; iOS <span>5</span></a>
-        <a href="#cloud-mlops">Cloud, Deployment &amp; MLOps <span>5</span></a>
+        <a href="#ai-ml"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3m-13-2 3-4 3 2"/></svg><span class="category-label">AI, Machine Learning &amp; Computer Vision</span><span class="category-count">7</span></a>
+        <a href="#data-analysis"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 4 18 4 18 0V5M3 12c0 4 18 4 18 0"/></svg><span class="category-label">Data Analysis &amp; Statistics</span><span class="category-count">5</span></a>
+        <a href="#software-mobile"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m8 5-6 7 6 7m8-14 6 7-6 7m-3-17-2 20"/></svg><span class="category-label">Software, APIs &amp; iOS</span><span class="category-count">5</span></a>
+        <a href="#cloud-mlops"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18a5 5 0 1 1 1-9 6 6 0 0 1 11-2 5.5 5.5 0 0 1 0 11"/><path d="m8 16 4-4 4 4m-4-4v10"/></svg><span class="category-label">Cloud, Deployment &amp; MLOps</span><span class="category-count">5</span></a>
       </nav>
       <section id="ai-ml" class="project-group" aria-labelledby="ai-ml-title">
         <h4 id="ai-ml-title">AI, Machine Learning &amp; Computer Vision</h4>
