@@ -18,6 +18,8 @@
     header::before{content:'';position:absolute;inset:30px 10px;background-color:rgba(10,29,49,.12);border:1px solid rgba(185,215,255,.10);border-radius:20px;backdrop-filter:blur(10px);pointer-events:none;z-index:0;}
     header h1{margin:0;font-size:1.5rem;white-space:nowrap;position:relative;z-index:1;}
     header nav{position:relative;z-index:1;}
+    header nav a{display:inline-flex;align-items:center;gap:7px;min-height:28px;line-height:1.4;white-space:nowrap}
+    .nav-icon{width:18px;height:18px;flex-shrink:0;color:var(--on-shell-accent)}
     nav ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;justify-content:flex-end}
     nav a{color:var(--on-shell);text-decoration:none;font-weight:600}
     .container{max-width:900px;margin:40px auto;padding:0 20px}
@@ -166,13 +168,13 @@
     <h1>Devin Rogers</h1>
     <nav aria-label="main navigation">
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-8h6v8"/></svg><span>Home</span></a></li>
+        <li><a href="#projects"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7V5a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/><path d="M3 9h18"/></svg><span>Projects</span></a></li>
+        <li><a href="#about"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg><span>About</span></a></li>
+        <li><a href="#experience"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M2 12a25 25 0 0 0 20 0M10 12v3h4v-3"/></svg><span>Experience</span></a></li>
+        <li><a href="#skills"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 6a5 5 0 0 0-6 6L2 18a2.8 2.8 0 0 0 4 4l6-6a5 5 0 0 0 6-6l-4 3-3-3 3-4Z"/><path d="m17 3 4 4m-2-6 4 4M4 20h.01"/></svg><span>Skills</span></a></li>
+        <li><a href="#education"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m2 9 10-6 10 6-10 6L2 9ZM6 12v6c4 3 8 3 12 0v-6M22 9v9"/></svg><span>Education</span></a></li>
+        <li><a href="#contact"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg><span>Contact</span></a></li>
       </ul>
     </nav>
   </header>
