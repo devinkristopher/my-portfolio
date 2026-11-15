@@ -65,14 +65,27 @@
     .content-panel a {color: #174da8; text-underline-offset: 3px; overflow-wrap: anywhere;}
     @media(max-width:700px){.organization-card,.content-panel{padding:20px;border-radius:20px;}}
     section{margin-top:40px}
-    .skills-list{columns:2 200px;list-style:none;padding:0}
-    .skills-list li{background:#fff;margin:5px 0;padding:10px;border-radius:4px;border:1px solid #e0e0e0}
-    li img {
-        width: 20px;
-        height: 20px;
-        vertical-align: middle;
-        margin-right: 8px;
-    }
+    .inline-icon{width:20px;height:20px;flex-shrink:0;color:#1c5cc6;vertical-align:middle}
+    .hero-location{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;line-height:1.6}
+    .location-name{display:inline-flex;align-items:center;gap:7px}
+    .location-availability{color:#535e71}
+    .contact-row{display:flex;align-items:flex-start;gap:12px}
+    .contact-row .inline-icon{margin-top:4px}
+    .contact-row span{min-width:0}
+    .skills-intro{color:#535e71;line-height:1.65;max-width:900px}
+    .skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}
+    .skill-card{background:#fff;border:1px solid #e1e6ee;border-radius:24px;padding:24px;box-shadow:0 4px 18px rgba(36,48,72,.045);min-width:0;display:flex;flex-direction:column}
+    .skill-heading{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+    .skill-heading h4{font-size:1.05rem;line-height:1.4;margin:0}
+    .skill-icon{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:12px;background:#edf3ff;color:#1c5cc6;flex-shrink:0}
+    .skill-icon svg{width:22px;height:22px}
+    .skill-context{font-size:.76rem;line-height:1.5;color:#596478;margin:4px 0 0}
+    .skill-list{list-style:none;padding:0;margin:0;line-height:1.6;font-size:.94rem}
+    .skill-list li{padding:9px 0;border-top:1px solid #eef1f6}
+    .skill-list strong{color:#39325a;font-weight:600}
+    .skill-evidence{margin:auto 0 0;padding-top:16px;font-size:.85rem}
+    .skill-evidence a{color:#174da8;text-underline-offset:3px}
+    @media(max-width:700px){.skills-grid{grid-template-columns:1fr}.skill-card{padding:20px;border-radius:20px}.hero-location{gap:4px 10px}.location-divider{display:none}.location-availability{flex-basis:100%}}
 
     html{scroll-behavior:smooth;scroll-padding-top:24px}
     a:focus-visible{outline:3px solid #e09200;outline-offset:4px}
@@ -128,7 +141,7 @@
     <section id="home" class="hero-section">
       <div id="hero">
         <h2>Engineering the intelligent layer between people and systems</h2>
-        <p>Blairsville, Georgia · Open to Atlanta-area and remote opportunities</p>
+        <p class="hero-location"><span class="location-name"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Blairsville, Georgia</span><span class="location-divider" aria-hidden="true">·</span><span class="location-availability">Open to Atlanta-area and remote opportunities</span></p>
         <p>Where software engineering, IT infrastructure and AI + ML intersect to solve complex problems.</p>
       </div>
     </section>
@@ -359,33 +372,121 @@
       <h3>About Me</h3>
       <p class="content-panel">Software &amp; systems engineer with a strong foundation in artificial intelligence/machine learning and endpoint security. I have designed automated remediation workflows, engineered cloud-based (AWS) RESTful Java APIs, managed large-scale device fleets, and developed ML models in applied settings. My experience spans full‑stack development, data analysis, and security automation across various industries.</p>
     </section>
-    <section id="skills">
-      <h3>Skills</h3>
-      <ul class="skills-list">
-        <!--
-        <li><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Description of image 1">Python (pandas, NumPy, data pipelines)</li>
-      -->
-        <li>Python (pandas, Numpy, data pipelines)</li>
-        <li>Jamf Endpoint Management</li>
-        <li>Machine learning &amp; AI (scikit-learn, TensorFlow)</li>
-        <li>Data analysis &amp; visualization</li>
-        <li>Endpoint security automation (PowerShell, Bash)</li>
-        <li>MDM platforms: Microsoft Intune, Jamf</li>
-        <li>AzureAD/EntraID Ecosystem Administration</li>
-        <li>Microsoft Defender Portal Security Remediations</li>
-        <li>Java REST APIs (Spring Boot, Microservices)</li>
-        <li>Java Desktop Development</li>
-        <li>Android App Development (Java)</li>
-        <li>Full-Stack Development</li>
-        <!--
-        <li><img src="https://icon-icons.com/download-file?file=https%3A%2F%2Fimages.icon-icons.com%2F2699%2FPNG%2F512%2Fjamf_logo_icon_169602.png&id=169602&pack_or_individual=pack" alt="Jamf logo">Jamf Endpoint Management</li>
-      -->
-        <li>REST APIs, automation scripting</li>
-        <li>Swift (iOS utilities)</li>
-        <li>Cloud (AWS Lambda, S3, CloudWatch)</li>
-        <li>AWS coursework: EC2, IAM permissions, AWS CLI, S3-based ML workflow</li>
-        <li>Dev tools: Git, SonarQube</li>
-      </ul>
+    <section id="skills" aria-labelledby="skills-title">
+      <h3 id="skills-title">Skills</h3>
+      <p class="skills-intro">A toolkit built across enterprise engineering, software development, and applied AI/ML. Explore each area and the work behind it.</p>
+      <div class="skills-grid">
+        <article class="skill-card" aria-labelledby="skill-software">
+          <div class="skill-heading">
+            <span class="skill-icon"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m8 5-6 7 6 7m8-14 6 7-6 7m-3-17-2 20"/></svg></span>
+            <div><h4 id="skill-software">Software &amp; API Engineering</h4><p class="skill-context">Professional experience · projects · coursework</p></div>
+          </div>
+          <ul class="skill-list">
+            <li><strong>Languages:</strong> Python, Java and JavaScript.</li>
+            <li><strong>Services:</strong> Spring Boot, FastAPI, Pydantic, REST APIs and stateful ASGI services; MongoDB integration.</li>
+            <li><strong>Reliability:</strong> Custom health checks, request validation, error handling and reporting.</li>
+            <li><strong>Interfaces:</strong> Swift/iOS, Android with Java, JavaFX, AWT/Swing, HTML and CSS.</li>
+            <li><strong>Quality:</strong> pytest, SonarQube and Selenium WebDriver automation from college QA coursework.</li>
+            <li><strong>AI-assisted development:</strong> GitHub Copilot and Codex/Work for coding, tests and PR summaries, with review.</li>
+          </ul>
+          <p class="skill-evidence"><a href="#software-mobile">Explore software and API projects <span aria-hidden="true">↗</span></a></p>
+        </article>
+        <article class="skill-card" aria-labelledby="skill-endpoint">
+          <div class="skill-heading">
+            <span class="skill-icon"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="14" height="12" rx="2"/><path d="M5 20h8m-4-5v5"/><rect x="17" y="8" width="5" height="13" rx="1.5"/></svg></span>
+            <div><h4 id="skill-endpoint">Endpoint &amp; Identity Management</h4><p class="skill-context">Professional experience</p></div>
+          </div>
+          <ul class="skill-list">
+            <li><strong>Platforms:</strong> Microsoft Intune, Jamf Pro, Jamf Composer and declarative device management.</li>
+            <li><strong>Automation:</strong> PowerShell, Bash, AppleScript and Objective-C; provisioning, application updates and compliance checks.</li>
+            <li><strong>Apple ecosystem:</strong> Apple Business Manager, VPP licensing, managed Apple accounts, federation and user migration.</li>
+            <li><strong>Configuration:</strong> Entra ID, Group Policy, ADMX templates, registry configuration and device lifecycle management.</li>
+          </ul>
+          <p class="skill-evidence"><a href="#core-scientific-title">See Core Scientific experience <span aria-hidden="true">↗</span></a></p>
+        </article>
+        <article class="skill-card" aria-labelledby="skill-security">
+          <div class="skill-heading">
+            <span class="skill-icon"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 2 8 3v6c0 5-4 9-8 11-4-2-8-6-8-11V5z"/><path d="m8 12 3 3 5-6"/></svg></span>
+            <div><h4 id="skill-security">Security &amp; IT Operations</h4><p class="skill-context">Professional experience</p></div>
+          </div>
+          <ul class="skill-list">
+            <li><strong>Endpoint security:</strong> Microsoft Defender for Endpoint, KQL investigation and scripted software remediation.</li>
+            <li><strong>Visibility:</strong> Custom endpoint health checks, Jamf dashboards, return-code monitoring and technical log auditing.</li>
+            <li><strong>Microsoft 365:</strong> Exchange Online, OneDrive, SharePoint and Power Automate.</li>
+            <li><strong>Integration planning:</strong> Microsoft Graph and partner compliance API familiarity; Jamf/Intune and BYOD control proposals.</li>
+            <li><strong>Collaboration:</strong> InfoSec partnership, staged remediation, technical documentation and user support through migrations.</li>
+          </ul>
+          <p class="skill-evidence"><a href="#experience">See professional experience <span aria-hidden="true">↗</span></a></p>
+        </article>
+        <article class="skill-card" aria-labelledby="skill-data">
+          <div class="skill-heading">
+            <span class="skill-icon"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 4 18 4 18 0V5M3 12c0 4 18 4 18 0"/></svg></span>
+            <div><h4 id="skill-data">Data Analysis &amp; SQL</h4><p class="skill-context">Professional experience · projects · coursework</p></div>
+          </div>
+          <ul class="skill-list">
+            <li><strong>Analysis:</strong> Python, pandas, NumPy and Jupyter; multi-table data cleaning and exploratory analysis.</li>
+            <li><strong>Transformation:</strong> API and CSV ingestion, joins, pivots, grouped aggregates and time-series alignment.</li>
+            <li><strong>Databases:</strong> MySQL and JDBC; SQL joins, CASE expressions, aggregation and nested subqueries.</li>
+            <li><strong>Statistics:</strong> SciPy, probability, hypothesis testing and interpretation of business metrics.</li>
+            <li><strong>Visualization:</strong> Matplotlib and Seaborn; distributions, correlations and comparative charts.</li>
+          </ul>
+          <p class="skill-evidence"><a href="#data-analysis">Explore data analysis projects <span aria-hidden="true">↗</span></a></p>
+        </article>
+        <article class="skill-card" aria-labelledby="skill-machine-learning">
+          <div class="skill-heading">
+            <span class="skill-icon"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3m-13-2 3-4 3 2"/></svg></span>
+            <div><h4 id="skill-machine-learning">Machine Learning &amp; Forecasting</h4><p class="skill-context">AI/ML capstone · completed coursework</p></div>
+          </div>
+          <ul class="skill-list">
+            <li><strong>Frameworks:</strong> scikit-learn, XGBoost and TensorFlow/Keras.</li>
+            <li><strong>Modeling:</strong> Classification, regression, tree ensembles and neural networks.</li>
+            <li><strong>Preparation:</strong> Feature engineering, scaling, imputation, class-imbalance handling and regularization.</li>
+            <li><strong>Evaluation:</strong> Cross-validation, chronological splits, F1, ROC AUC, MAE and RMSE.</li>
+            <li><strong>Applied forecasting:</strong> Sensor telemetry, lag features and 24-hour soil-moisture prediction in PAMLA.</li>
+          </ul>
+          <p class="skill-evidence"><a href="#ai-ml">Explore machine-learning projects <span aria-hidden="true">↗</span></a></p>
+        </article>
+        <article class="skill-card" aria-labelledby="skill-vision-language">
+          <div class="skill-heading">
+            <span class="skill-icon"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <div><h4 id="skill-vision-language">Computer Vision, NLP &amp; LLMs</h4><p class="skill-context">Projects · completed coursework</p></div>
+          </div>
+          <ul class="skill-list">
+            <li><strong>Computer vision:</strong> CNNs, ResNet50 transfer learning and image-based regression; OpenCV filtering in college coursework.</li>
+            <li><strong>Text analysis:</strong> NLTK, spaCy, TF-IDF, sentiment classification and LightGBM.</li>
+            <li><strong>Retrieval &amp; QA:</strong> Sentence Transformers, ChromaDB, Hugging Face Transformers and extractive question answering.</li>
+            <li><strong>Local AI:</strong> Gemma via llama-server; a conversational interface with Pydantic-validated inputs in PAMLA.</li>
+          </ul>
+          <p class="skill-evidence"><a href="#ai-ml">Explore vision and language projects <span aria-hidden="true">↗</span></a></p>
+        </article>
+        <article class="skill-card" aria-labelledby="skill-cloud">
+          <div class="skill-heading">
+            <span class="skill-icon"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18a5 5 0 1 1 1-9 6 6 0 0 1 11-2 5.5 5.5 0 0 1 0 11"/><path d="m8 16 4-4 4 4m-4-4v10"/></svg></span>
+            <div><h4 id="skill-cloud">Cloud, MLOps &amp; Delivery</h4><p class="skill-context">Professional AWS work · projects · hands-on labs</p></div>
+          </div>
+          <ul class="skill-list">
+            <li><strong>AWS at work:</strong> Lambda, S3 and CloudWatch for API integrations and log processing.</li>
+            <li><strong>AWS labs:</strong> EC2, S3, IAM permissions and AWS CLI in a Python/scikit-learn ML workflow.</li>
+            <li><strong>Packaging:</strong> Docker, Docker Hub, Linux and command-line workflows.</li>
+            <li><strong>Delivery:</strong> Git/GitHub, GitHub Actions and automated code, data and model validation.</li>
+            <li><strong>MLOps:</strong> MLflow experiment tracking, DVC versioning, model-performance gates and Evidently drift monitoring.</li>
+          </ul>
+          <p class="skill-evidence"><a href="#cloud-mlops">Explore cloud and MLOps projects <span aria-hidden="true">↗</span></a></p>
+        </article>
+        <article class="skill-card" aria-labelledby="skill-infrastructure">
+          <div class="skill-heading">
+            <span class="skill-icon"><svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="5" rx="1"/><path d="M12 7v5M4 16v-4h16v4"/><rect x="1" y="16" width="6" height="5" rx="1"/><rect x="9" y="16" width="6" height="5" rx="1"/><rect x="17" y="16" width="6" height="5" rx="1"/><path d="M12 12v4"/></svg></span>
+            <div><h4 id="skill-infrastructure">Networking &amp; Operational Resilience</h4><p class="skill-context">Professional experience · networking labs</p></div>
+          </div>
+          <ul class="skill-list">
+            <li><strong>Network configuration:</strong> Cisco IOS console access and Catalyst 3750X provisioning using established configurations.</li>
+            <li><strong>Monitoring:</strong> Zabbix, traceroute and network connectivity troubleshooting.</li>
+            <li><strong>Connectivity operations:</strong> Fiber cross-connect fulfillment, LOA-based circuit activation, demarcation points and outage coordination.</li>
+            <li><strong>Continuity:</strong> BCDR proposals, emergency communications planning and coordination with clients, vendors and IT leadership.</li>
+          </ul>
+          <p class="skill-evidence"><a href="#core-scientific-title">See infrastructure experience <span aria-hidden="true">↗</span></a></p>
+        </article>
+      </div>
     </section>
     <section id="experience">
       <h3>Experience</h3>
@@ -447,9 +548,9 @@
     <section id="contact">
       <h3>Contact</h3>
       <div class="content-panel">
-      <p>Mobile: (678) 477‑5360</p>
-      <p>Email: <a href="mailto:devinkristopher@icloud.com">devinkristopher@icloud.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/devinkristopher" target="_blank" rel="noopener noreferrer">linkedin.com/in/devinkristopher</a></p>
+        <p class="contact-row"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 2 4 5-3 3c2 4 3 5 7 7l3-3 5 4c-1 4-3 5-6 4C8 19 5 16 2 8 1 5 2 3 6 2Z"/></svg><span>Mobile: <a href="tel:+16784775360">(678) 477-5360</a></span></p>
+        <p class="contact-row"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg><span>Email: <a href="mailto:devinkristopher@icloud.com">devinkristopher@icloud.com</a></span></p>
+        <p class="contact-row"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7m5 0v-7m0 3c0-4 6-4 6 0v4"/><circle cx="7" cy="7" r=".8" fill="currentColor" stroke="none"/></svg><span>LinkedIn: <a href="https://www.linkedin.com/in/devinkristopher" target="_blank" rel="noopener noreferrer">linkedin.com/in/devinkristopher</a></span></p>
       </div>
     </section>
   </main>
